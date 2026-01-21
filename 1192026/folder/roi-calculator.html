@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="Calculate ROI for your marketing campaigns and ad spend. See if your Facebook ads, Google ads, or other investments are profitable. Free ROI calculator.">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">CALCULATOR</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#calculators">Calculators</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> › ROI Calculator
+        </nav>
+
+        <article class="calculator-page">
+            <header class="page-header">
+                <h1>ROI Calculator</h1>
+                <p class="subtitle">Calculate your marketing return on investment</p>
+            </header>
+
+            <div class="calculator-layout">
+                <div class="calculator-main">
+                    <section class="calculator-card">
+                        <h2>Calculate Your ROI</h2>
+                        <form id="roiForm" class="calc-form">
+                            <div class="form-group">
+                                <label for="investment">Total Investment / Ad Spend ($)</label>
+                                <input type="number" id="investment" name="investment" placeholder="5000" step="0.01" required>
+                                <small>How much did you spend?</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="revenue">Revenue Generated ($)</label>
+                                <input type="number" id="revenue" name="revenue" placeholder="15000" step="0.01" required>
+                                <small>Total sales from this investment</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cogs">Cost of Goods Sold ($)</label>
+                                <input type="number" id="cogs" name="cogs" placeholder="6000" step="0.01">
+                                <small>Direct costs for products sold (optional)</small>
+                            </div>
+
+                            <div class="button-group">
+                                <button type="submit" class="btn btn-primary">Calculate</button>
+                                <button type="reset" class="btn btn-secondary">Reset</button>
+                            </div>
+                        </form>
+
+                        <div id="results" class="results-box" style="display: none;">
+                            <h3>Your Results</h3>
+                            <div class="result-grid">
+                                <div class="result-item">
+                                    <span class="result-label">Net Profit</span>
+                                    <span class="result-value" id="netProfit">$0</span>
+                                </div>
+                                <div class="result-item highlight">
+                                    <span class="result-label">ROI Percentage</span>
+                                    <span class="result-value" id="roiPercentage">0%</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Return Multiple</span>
+                                    <span class="result-value" id="returnMultiple">0x</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Profit Per Dollar Spent</span>
+                                    <span class="result-value" id="profitPerDollar">$0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="explanation-section">
+                        <h2>How This Calculator Works</h2>
+                        <p><strong>ROI (Return on Investment)</strong> shows the percentage profit you made on your investment.</p>
+                        <ul>
+                            <li><strong>ROI = 100%</strong> means you doubled your money (spent $1000, gained $1000 profit = $2000 total)</li>
+                            <li><strong>ROI = 50%</strong> means you made $1.50 for every $1 spent</li>
+                            <li><strong>ROI = -20%</strong> means you lost money</li>
+                        </ul>
+                        <p><strong>Positive ROI = profitable campaign. Negative ROI = losing money.</strong></p>
+                        <p><strong>Return Multiple</strong> is easier to visualize: 3.0x means every $1 spent returned $3 in revenue.</p>
+
+                        <h3>Formulas Used</h3>
+                        <ul>
+                            <li>Net Profit = Revenue - Investment - COGS</li>
+                            <li>ROI Percentage = (Net Profit ÷ Investment) × 100</li>
+                            <li>Return Multiple = Revenue ÷ Investment</li>
+                            <li>Profit Per Dollar = Net Profit ÷ Investment</li>
+                        </ul>
+
+                        <div class="example-box">
+                            <h4>Example Calculation</h4>
+                            <p><strong>Inputs:</strong> Investment: $5,000 (Facebook ads) | Revenue: $15,000 | COGS: $6,000</p>
+                            <p><strong>Results:</strong> Net Profit: $4,000 | <strong>ROI: 80%</strong> | Return: 3.0x</p>
+                            <p><strong>Interpretation:</strong> For every $1 spent on ads, you got $3 back in revenue and $0.80 in net profit. This is a profitable campaign worth scaling.</p>
+                        </div>
+                    </section>
+
+                    <section class="faq-section">
+                        <h2>Frequently Asked Questions</h2>
+                        <div class="faq-item">
+                            <h3>What's a good ROI for marketing?</h3>
+                            <p>A 5:1 ratio (500% ROI) is considered strong for most marketing campaigns. 3:1 (300%) is acceptable. Below 2:1 (200%) may not be sustainable.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Should I include COGS in my ROI calculation?</h3>
+                            <p>Yes, for accuracy. If you're selling physical products, include COGS. For services with minimal costs, you can leave it at $0.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>How do I improve my ROI?</h3>
+                            <p>Increase revenue (better targeting, higher conversion), reduce ad spend (optimize campaigns), or reduce COGS (better suppliers, volume discounts).</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>What if my ROI is negative?</h3>
+                            <p>Stop the campaign immediately. Analyze what went wrong (poor targeting, weak offer, wrong audience) before spending more.</p>
+                        </div>
+                    </section>
+
+                    <section class="related-calculators">
+                        <h2>Related Calculators</h2>
+                        <div class="calc-cards">
+                            <a href="profit-margin-calculator.html" class="calc-card-link">
+                                <h3>Profit Margin Calculator</h3>
+                                <p>Calculate overall business margins →</p>
+                            </a>
+                            <a href="break-even-calculator.html" class="calc-card-link">
+                                <h3>Break-Even Calculator</h3>
+                                <p>Find your break-even point →</p>
+                            </a>
+                            <a href="freelance-rate-calculator.html" class="calc-card-link">
+                                <h3>Freelance Rate Calculator</h3>
+                                <p>Set profitable rates →</p>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="calculator-sidebar">
+                    <div class="ad-slot">
+                        <p>Ad Space</p>
+                        <p class="ad-note">300×250</p>
+                    </div>
+                </aside>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CALCULATOR. All rights reserved.</p>
+            <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script src="js/roi-calculator.js"></script>
+</body>
+</html>

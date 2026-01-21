@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="Calculate gross profit margin, net profit margin, and markup instantly. Free tool for small businesses, startups, and freelancers. No signup required.">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">CALCULATOR</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#calculators">Calculators</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> › Profit Margin Calculator
+        </nav>
+
+        <article class="calculator-page">
+            <header class="page-header">
+                <h1>Profit Margin Calculator</h1>
+                <p class="subtitle">Calculate gross profit margin, net profit margin, and markup for your business</p>
+            </header>
+
+            <div class="calculator-layout">
+                <div class="calculator-main">
+                    <section class="calculator-card">
+                        <h2>Calculate Your Margins</h2>
+                        <form id="profitMarginForm" class="calc-form">
+                            <div class="form-group">
+                                <label for="revenue">Total Revenue ($)</label>
+                                <input type="number" id="revenue" name="revenue" placeholder="50000" step="0.01" required>
+                                <small>Total sales or income for the period</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cogs">Cost of Goods Sold ($)</label>
+                                <input type="number" id="cogs" name="cogs" placeholder="30000" step="0.01" required>
+                                <small>Direct costs to produce/deliver products</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="expenses">Operating Expenses ($)</label>
+                                <input type="number" id="expenses" name="expenses" placeholder="8000" step="0.01">
+                                <small>Rent, salaries, marketing, utilities (optional)</small>
+                            </div>
+
+                            <div class="button-group">
+                                <button type="submit" class="btn btn-primary">Calculate</button>
+                                <button type="reset" class="btn btn-secondary">Reset</button>
+                            </div>
+                        </form>
+
+                        <div id="results" class="results-box" style="display: none;">
+                            <h3>Your Results</h3>
+                            <div class="result-grid">
+                                <div class="result-item">
+                                    <span class="result-label">Gross Profit</span>
+                                    <span class="result-value" id="grossProfit">$0</span>
+                                </div>
+                                <div class="result-item highlight">
+                                    <span class="result-label">Gross Profit Margin</span>
+                                    <span class="result-value" id="grossMargin">0%</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Net Profit</span>
+                                    <span class="result-value" id="netProfit">$0</span>
+                                </div>
+                                <div class="result-item highlight">
+                                    <span class="result-label">Net Profit Margin</span>
+                                    <span class="result-value" id="netMargin">0%</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Markup</span>
+                                    <span class="result-value" id="markup">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="explanation-section">
+                        <h2>How This Calculator Works</h2>
+                        <p><strong>Gross Profit Margin</strong> shows what percentage of revenue remains after covering direct costs (COGS). A 40% margin means you keep $0.40 of every dollar before operating expenses.</p>
+                        <p><strong>Net Profit Margin</strong> shows what percentage you keep after ALL expenses. A 15% net margin is healthy for most small businesses.</p>
+                        <p><strong>Markup</strong> shows how much you charge above cost. A 50% markup means you sell at 1.5× your cost.</p>
+
+                        <h3>Formulas Used</h3>
+                        <ul>
+                            <li>Gross Profit = Revenue - COGS</li>
+                            <li>Gross Profit Margin = (Gross Profit ÷ Revenue) × 100</li>
+                            <li>Net Profit = Revenue - COGS - Operating Expenses</li>
+                            <li>Net Profit Margin = (Net Profit ÷ Revenue) × 100</li>
+                            <li>Markup = ((Revenue - COGS) ÷ COGS) × 100</li>
+                        </ul>
+
+                        <div class="example-box">
+                            <h4>Example Calculation</h4>
+                            <p><strong>Inputs:</strong> Revenue: $50,000 | COGS: $30,000 | Expenses: $8,000</p>
+                            <p><strong>Results:</strong> Gross Margin: 40% | Net Margin: 24% | Markup: 66.7%</p>
+                        </div>
+                    </section>
+
+                    <section class="faq-section">
+                        <h2>Frequently Asked Questions</h2>
+                        <div class="faq-item">
+                            <h3>What's a good profit margin for a small business?</h3>
+                            <p>Net profit margins of 10-20% are typical for small businesses. Service businesses often have higher margins (20-40%) than retail (2-10%).</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>What's the difference between margin and markup?</h3>
+                            <p>Margin is profit as a percentage of sales price. Markup is profit as a percentage of cost. A 50% markup equals a 33% margin.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>How can I improve my profit margins?</h3>
+                            <p>Increase prices, reduce COGS (negotiate with suppliers, buy in bulk), reduce operating expenses, or shift to higher-margin products/services.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Should I focus on gross or net profit margin?</h3>
+                            <p>Both matter. Gross margin shows pricing effectiveness. Net margin shows overall business health after all costs.</p>
+                        </div>
+                    </section>
+
+                    <section class="related-calculators">
+                        <h2>Related Calculators</h2>
+                        <div class="calc-cards">
+                            <a href="break-even-calculator.html" class="calc-card-link">
+                                <h3>Break-Even Calculator</h3>
+                                <p>Find how many sales you need to cover costs →</p>
+                            </a>
+                            <a href="roi-calculator.html" class="calc-card-link">
+                                <h3>ROI Calculator</h3>
+                                <p>Measure your marketing return on investment →</p>
+                            </a>
+                            <a href="freelance-rate-calculator.html" class="calc-card-link">
+                                <h3>Freelance Rate Calculator</h3>
+                                <p>Set profitable hourly rates →</p>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="calculator-sidebar">
+                    <div class="ad-slot">
+                        <p>Ad Space</p>
+                        <p class="ad-note">300×250</p>
+                    </div>
+                </aside>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CALCULATOR. All rights reserved.</p>
+            <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script src="js/profit-margin-calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="Calculate your break-even point instantly. Find out how many units you need to sell to cover costs. Free tool for startups and small businesses.">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">CALCULATOR</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#calculators">Calculators</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> › Break-Even Calculator
+        </nav>
+
+        <article class="calculator-page">
+            <header class="page-header">
+                <h1>Break-Even Calculator</h1>
+                <p class="subtitle">Find your break-even point in seconds</p>
+            </header>
+
+            <div class="calculator-layout">
+                <div class="calculator-main">
+                    <section class="calculator-card">
+                        <h2>Calculate Your Break-Even Point</h2>
+                        <form id="breakEvenForm" class="calc-form">
+                            <div class="form-group">
+                                <label for="fixedCosts">Fixed Costs ($)</label>
+                                <input type="number" id="fixedCosts" name="fixedCosts" placeholder="10000" step="0.01" required>
+                                <small>Monthly costs that don't change (rent, salaries, insurance)</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pricePerUnit">Price Per Unit ($)</label>
+                                <input type="number" id="pricePerUnit" name="pricePerUnit" placeholder="50" step="0.01" required>
+                                <small>What you charge per product/service</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="variableCost">Variable Cost Per Unit ($)</label>
+                                <input type="number" id="variableCost" name="variableCost" placeholder="20" step="0.01" required>
+                                <small>Cost per unit (materials, shipping, etc.)</small>
+                            </div>
+
+                            <div class="button-group">
+                                <button type="submit" class="btn btn-primary">Calculate</button>
+                                <button type="reset" class="btn btn-secondary">Reset</button>
+                            </div>
+                        </form>
+
+                        <div id="results" class="results-box" style="display: none;">
+                            <h3>Your Results</h3>
+                            <div class="result-grid">
+                                <div class="result-item">
+                                    <span class="result-label">Contribution Margin</span>
+                                    <span class="result-value" id="contributionMargin">$0</span>
+                                </div>
+                                <div class="result-item highlight">
+                                    <span class="result-label">Break-Even Units</span>
+                                    <span class="result-value" id="breakEvenUnits">0 units</span>
+                                </div>
+                                <div class="result-item highlight">
+                                    <span class="result-label">Break-Even Revenue</span>
+                                    <span class="result-value" id="breakEvenRevenue">$0</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Contribution Margin Ratio</span>
+                                    <span class="result-value" id="contributionMarginRatio">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="explanation-section">
+                        <h2>How This Calculator Works</h2>
+                        <p><strong>Break-Even Point</strong> is when your total revenue equals total costs — you're not making money yet, but you're not losing it either.</p>
+                        <p><strong>Contribution Margin</strong> is what's left from each sale after covering variable costs. This money goes toward fixed costs and profit.</p>
+                        <p><strong>Break-Even Units</strong> shows exactly how many sales you need before you start profiting.</p>
+
+                        <h3>Formulas Used</h3>
+                        <ul>
+                            <li>Contribution Margin = Price Per Unit - Variable Cost Per Unit</li>
+                            <li>Break-Even Units = Fixed Costs ÷ Contribution Margin</li>
+                            <li>Break-Even Revenue = Break-Even Units × Price Per Unit</li>
+                            <li>Contribution Margin Ratio = (Contribution Margin ÷ Price) × 100</li>
+                        </ul>
+
+                        <div class="example-box">
+                            <h4>Example Calculation</h4>
+                            <p><strong>Inputs:</strong> Fixed Costs: $10,000 | Price: $50 | Variable Cost: $20</p>
+                            <p><strong>Results:</strong> Break-Even Units: 334 | Break-Even Revenue: $16,700</p>
+                            <p><strong>Interpretation:</strong> You must sell 334 units to cover all costs. Every sale after that contributes $30 to profit.</p>
+                        </div>
+                    </section>
+
+                    <section class="faq-section">
+                        <h2>Frequently Asked Questions</h2>
+                        <div class="faq-item">
+                            <h3>What is a break-even point?</h3>
+                            <p>The break-even point is the level of sales at which total revenue equals total costs. At this point, you're neither making a profit nor a loss.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>What's the difference between fixed and variable costs?</h3>
+                            <p>Fixed costs stay the same regardless of sales (rent, insurance). Variable costs change with each unit sold (materials, shipping).</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Is a lower break-even point better?</h3>
+                            <p>Yes. A lower break-even point means you need fewer sales to become profitable, which reduces risk and improves cash flow.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>How often should I calculate my break-even point?</h3>
+                            <p>Recalculate whenever costs or prices change, when launching new products, or during business planning cycles (quarterly or annually).</p>
+                        </div>
+                    </section>
+
+                    <section class="related-calculators">
+                        <h2>Related Calculators</h2>
+                        <div class="calc-cards">
+                            <a href="profit-margin-calculator.html" class="calc-card-link">
+                                <h3>Profit Margin Calculator</h3>
+                                <p>Calculate your profit margins →</p>
+                            </a>
+                            <a href="startup-cost-calculator.html" class="calc-card-link">
+                                <h3>Startup Cost Calculator</h3>
+                                <p>Estimate your initial investment →</p>
+                            </a>
+                            <a href="roi-calculator.html" class="calc-card-link">
+                                <h3>ROI Calculator</h3>
+                                <p>Measure marketing return on investment →</p>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="calculator-sidebar">
+                    <div class="ad-slot">
+                        <p>Ad Space</p>
+                        <p class="ad-note">300×250</p>
+                    </div>
+                </aside>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CALCULATOR. All rights reserved.</p>
+            <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script src="js/break-even-calculator.js"></script>
+</body>
+</html>

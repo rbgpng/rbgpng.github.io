@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="Calculate the perfect hourly rate for your freelance business. Factor in salary, expenses, taxes, and profit. Free tool for freelancers and consultants.">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">CALCULATOR</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#calculators">Calculators</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> › Freelance Rate Calculator
+        </nav>
+
+        <article class="calculator-page">
+            <header class="page-header">
+                <h1>Freelance Hourly Rate Calculator</h1>
+                <p class="subtitle">What should you charge? Calculate your ideal hourly rate</p>
+            </header>
+
+            <div class="calculator-layout">
+                <div class="calculator-main">
+                    <section class="calculator-card">
+                        <h2>Calculate Your Rate</h2>
+                        <form id="freelanceRateForm" class="calc-form">
+                            <div class="form-group">
+                                <label for="desiredSalary">Desired Annual Salary ($)</label>
+                                <input type="number" id="desiredSalary" name="desiredSalary" placeholder="60000" step="1000" required>
+                                <small>What you want to earn per year</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="billableHours">Billable Hours Per Week</label>
+                                <input type="number" id="billableHours" name="billableHours" placeholder="30" step="1" required>
+                                <small>Hours you can actually bill clients (typically 20-35)</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="vacationWeeks">Vacation Weeks Per Year</label>
+                                <input type="number" id="vacationWeeks" name="vacationWeeks" placeholder="2" step="1" required>
+                                <small>Weeks you won't be working</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="expenses">Annual Business Expenses ($)</label>
+                                <input type="number" id="expenses" name="expenses" placeholder="5000" step="100" required>
+                                <small>Software, equipment, insurance, etc.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profitMargin">Desired Profit Margin (%)</label>
+                                <input type="number" id="profitMargin" name="profitMargin" placeholder="20" step="1" min="0" max="100">
+                                <small>Buffer for growth and slow months (15-25% typical)</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="taxRate">Estimated Tax Rate (%)</label>
+                                <input type="number" id="taxRate" name="taxRate" placeholder="25" step="1" min="0" max="100">
+                                <small>Your estimated income tax rate</small>
+                            </div>
+
+                            <div class="button-group">
+                                <button type="submit" class="btn btn-primary">Calculate</button>
+                                <button type="reset" class="btn btn-secondary">Reset</button>
+                            </div>
+                        </form>
+
+                        <div id="results" class="results-box" style="display: none;">
+                            <h3>Your Results</h3>
+                            <div class="result-grid">
+                                <div class="result-item">
+                                    <span class="result-label">Annual Working Hours</span>
+                                    <span class="result-value" id="annualHours">0 hours</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Minimum Rate (Break-Even)</span>
+                                    <span class="result-value" id="minimumRate">$0/hour</span>
+                                </div>
+                                <div class="result-item highlight">
+                                    <span class="result-label">Recommended Rate</span>
+                                    <span class="result-value" id="recommendedRate">$0/hour</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Projected Annual Revenue</span>
+                                    <span class="result-value" id="annualRevenue">$0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="explanation-section">
+                        <h2>How This Calculator Works</h2>
+                        <p><strong>Minimum Hourly Rate</strong> covers your salary, taxes, and expenses — but leaves no profit margin. You'll just break even.</p>
+                        <p><strong>Recommended Rate</strong> includes a profit buffer (typically 15-25%) for business growth, slow months, and unexpected costs.</p>
+                        <p><strong>Why 30 billable hours?</strong> Most freelancers work 40+ hours but only 20-35 are billable (rest is admin, marketing, etc.).</p>
+
+                        <h3>Formulas Used</h3>
+                        <ul>
+                            <li>Working Weeks = 52 - Vacation Weeks</li>
+                            <li>Annual Billable Hours = Billable Hours × Working Weeks</li>
+                            <li>Salary After Tax = Desired Salary ÷ (1 - Tax Rate)</li>
+                            <li>Total Needs = Salary After Tax + Expenses</li>
+                            <li>Minimum Rate = Total Needs ÷ Annual Hours</li>
+                            <li>Recommended Rate = Minimum Rate ÷ (1 - Profit Margin)</li>
+                        </ul>
+
+                        <div class="example-box">
+                            <h4>Example Calculation</h4>
+                            <p><strong>Inputs:</strong> Salary: $60,000 | Hours/Week: 30 | Vacation: 2 weeks | Expenses: $5,000 | Profit: 20% | Tax: 25%</p>
+                            <p><strong>Results:</strong> Minimum Rate: $56.67/hour | <strong>Recommended Rate: $70.83/hour</strong></p>
+                        </div>
+                    </section>
+
+                    <section class="faq-section">
+                        <h2>Frequently Asked Questions</h2>
+                        <div class="faq-item">
+                            <h3>What are billable hours?</h3>
+                            <p>Billable hours are the time you can actually charge clients. If you work 40 hours/week, typically only 20-35 are billable (the rest is admin, marketing, proposals).</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Why do I need a profit margin?</h3>
+                            <p>A profit margin (15-25%) provides a buffer for slow months, business growth, equipment upgrades, and unexpected expenses. Without it, one slow month puts you in the red.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Is this rate too high for my market?</h3>
+                            <p>If your calculated rate seems high, you have three options: reduce expenses, increase billable hours, or accept a lower salary. Don't undercharge — it's not sustainable.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Should I charge the same rate for all clients?</h3>
+                            <p>This is your baseline rate. You can charge more for rush work, difficult clients, or premium services. Never charge less than your minimum rate.</p>
+                        </div>
+                    </section>
+
+                    <section class="related-calculators">
+                        <h2>Related Calculators</h2>
+                        <div class="calc-cards">
+                            <a href="profit-margin-calculator.html" class="calc-card-link">
+                                <h3>Profit Margin Calculator</h3>
+                                <p>Track profitability per project →</p>
+                            </a>
+                            <a href="roi-calculator.html" class="calc-card-link">
+                                <h3>ROI Calculator</h3>
+                                <p>Measure marketing ROI →</p>
+                            </a>
+                            <a href="break-even-calculator.html" class="calc-card-link">
+                                <h3>Break-Even Calculator</h3>
+                                <p>Find your break-even point →</p>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="calculator-sidebar">
+                    <div class="ad-slot">
+                        <p>Ad Space</p>
+                        <p class="ad-note">300×250</p>
+                    </div>
+                </aside>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CALCULATOR. All rights reserved.</p>
+            <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script src="js/freelance-rate-calculator.js"></script>
+</body>
+</html>
